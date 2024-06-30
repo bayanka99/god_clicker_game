@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour
     }
 
 
-    private void OnMouseDown()
+    public void OnMouseDown()
     {
         if (gameManager.game_is_active)
         {

@@ -4069,7 +4069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f18cc3574776714fadc0348899742fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 15
   points: 2
   explosion: {fileID: 15085447402717889, guid: 743ce290c74ae49c19aa3f128322fc7e, type: 3}
   click_sounds: {fileID: 8300000, guid: 913d6445ee8cc4152a9c18da590ee203, type: 3}

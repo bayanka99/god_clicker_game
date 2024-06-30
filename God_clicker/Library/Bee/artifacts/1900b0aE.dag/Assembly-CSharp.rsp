@@ -361,6 +361,7 @@
 "Assets/scripts/MoveForward.cs"
 "Assets/scripts/PlayerController.cs"
 "Assets/scripts/Player_Follower.cs"
+"Assets/scripts/Powerup.cs"
 -langversion:9.0
 /deterministic
 /optimize+
