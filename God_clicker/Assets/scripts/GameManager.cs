@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI Game_over_Text;
     public TextMeshProUGUI lives_text;
     public GameObject main_menu;
+    public GameObject player;
     public int difficulty;
     public Button restart_button;
     public float spawnrate = 1.0f;
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour
     {
         this.difficulty=difficulty;
         game_is_active = true;
+        player.gameObject.SetActive(true);
 
         score = 0;
         switch (difficulty)
@@ -70,8 +72,24 @@ public class GameManager : MonoBehaviour
             
             yield return new WaitForSeconds(spawnrate);
             int index = Random.Range(0, targets.Count);
-            Instantiate(targets[index]);
+            Vector3 spawnPosition = generate_position();
+            // Instantiate(targets[index],spawnPosition, Quaternion.identity);
+            GameObject newTarget = Instantiate(targets[index], spawnPosition, Quaternion.identity);
+            newTarget.transform.LookAt(player.transform);
         }
+    }
+
+    private Vector3 generate_position()
+    {
+        int x = Random.Range(-25, 25);
+        if(x<= 20 && x>=-20)
+        {
+            int z=(Random.Range(0, 2) == 0) ? -22 : 22;
+            return new Vector3(x, 0, z);
+        }
+        return new Vector3(x, 0, Random.Range(-22, 22));
+
+
     }
 
     public void Update_score(float points, AudioClip click_sounds)
@@ -81,12 +99,13 @@ public class GameManager : MonoBehaviour
         scoreText.text = "Score: " + score;
     }
 
-    public void edit_life(float number)
+    public void edit_life(float number, Collider other)
     {
         lives = lives + number;
         lives_text.text = "Lives: " + lives;
         if (lives <= 0)
         {
+            Destroy(other.gameObject);
             this.gameover();
         }
     }
@@ -98,6 +117,7 @@ public class GameManager : MonoBehaviour
         
          restart_button.gameObject.SetActive(true);
         game_is_active = false;
+
     }
 
     public void restart_game()

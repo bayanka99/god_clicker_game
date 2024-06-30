@@ -1006,7 +1006,7 @@ Transform:
   m_GameObject: {fileID: 534669902}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.34, y: 73, z: -0.7}
+  m_LocalPosition: {x: -0.34, y: 96, z: -0.7}
   m_LocalScale: {x: 1.297, y: 25.94, z: 1.297}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1948,7 +1948,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 80.4, y: -23.9}
+  m_AnchoredPosition: {x: 80.400024, y: -23.900024}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1476137232
@@ -2061,6 +2061,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 100046, guid: 7b6675de545141649953fd8adec4561b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100046, guid: 7b6675de545141649953fd8adec4561b, type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
@@ -2078,7 +2082,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400046, guid: 7b6675de545141649953fd8adec4561b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.27
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 400046, guid: 7b6675de545141649953fd8adec4561b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2086,7 +2090,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400046, guid: 7b6675de545141649953fd8adec4561b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.21
+      value: -0.34
       objectReference: {fileID: 0}
     - target: {fileID: 400046, guid: 7b6675de545141649953fd8adec4561b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2556,10 +2560,12 @@ MonoBehaviour:
   - {fileID: 37558449902635244, guid: 1c0e3211da70480419f0cd6768db9cc8, type: 3}
   - {fileID: 8736455628819360078, guid: 389a0e3f218d1e346b9295f6ef6e0850, type: 3}
   - {fileID: 6438966270098004839, guid: 431bb8e6c678c464989940edc11d6425, type: 3}
+  - {fileID: 7801836393029605840, guid: 159608d9a26e9064e99304d87658cb3a, type: 3}
   scoreText: {fileID: 1476137232}
   Game_over_Text: {fileID: 337580667}
   lives_text: {fileID: 58039615}
   main_menu: {fileID: 2137219655}
+  player: {fileID: 1944023198}
   difficulty: 0
   restart_button: {fileID: 574809258}
   spawnrate: 1

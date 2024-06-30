@@ -56,13 +56,13 @@ public class Enemy : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        Destroy(gameObject);
+       
         if(other.CompareTag("Player"))
         {
-
+            Destroy(gameObject);
             if (gameManager.game_is_active)
             {
-                gameManager.edit_life(-1);
+                gameManager.edit_life(-1,other);
             }
         }
       //  if (!gameObject.CompareTag("Bad"))
