@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI enemies_spawned_text;
     public TextMeshProUGUI powerups_spawned_text;
     public GameObject main_menu;
+    public GameObject how_to_play_screen;
     public GameObject player;
     public int difficulty;
     public Button restart_button;
@@ -32,6 +33,14 @@ public class GameManager : MonoBehaviour
         
     }
 
+    public void show_how_to_play_screen()
+    {
+        main_menu.gameObject.SetActive(false);
+        how_to_play_screen.gameObject.SetActive(true);
+        
+
+    }
+
     public void startgame(int difficulty )
     {
         this.difficulty=difficulty;
@@ -42,11 +51,11 @@ public class GameManager : MonoBehaviour
         switch (difficulty)
         {
             case 1:
-                lives = 50000; break;
+                lives = 5; break;
              case 2:
-                lives=3000000; break;
+                lives=3; break;
             case 3:
-                lives=1000000; break;
+                lives=1; break;
         }
         scoreText.text = "Score: " + score;
         lives_text.text = "Lives: " + lives;
