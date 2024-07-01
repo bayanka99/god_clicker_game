@@ -87,15 +87,15 @@ public class GameManager : MonoBehaviour
         {
             
             yield return new WaitForSeconds(spawnrate);
-            int index = Random.Range(0, targets.Count);
+            int index = Random.Range(0, 2);
             Vector3 spawnPosition = generate_position();
             // Instantiate(targets[index],spawnPosition, Quaternion.identity);
             GameObject newTarget = Instantiate(targets[index], spawnPosition, Quaternion.identity);
             newTarget.transform.LookAt(player.transform);
-            double probability = 0.01; 
+            double probability = 0.09; 
             if (Random.value < probability)
             {
-                    Instantiate(targets[4], new Vector3(Random.Range(-22, 22), 0, Random.Range(-21, 21)), Quaternion.identity);
+                    Instantiate(targets[2], new Vector3(Random.Range(-20, 20), 0, Random.Range(-10, 10)), Quaternion.identity);
             }
         }
     }

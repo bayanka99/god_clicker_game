@@ -1,7 +1,6 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - CollisionTrigger
     - DifficultyButton
     - Enemy
     - FreeZombie_EyesGlow
@@ -23,6 +22,14 @@ ScriptsOnlyBuild:
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
     - TMPro.TextMeshProUGUI
+    UnityEditor.Graphs.dll:
+    - UnityEditor.Graphs.AnimationBlendTree.Graph
+    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
+    - UnityEditor.Graphs.AnimationStateMachine.Graph
+    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -137,31 +144,29 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2802}
     - Class: 114
-      Script: {instanceID: 2850}
-    - Class: 114
       Script: {instanceID: 3094}
     - Class: 114
-      Script: {instanceID: 4070}
+      Script: {instanceID: 4074}
     - Class: 114
-      Script: {instanceID: 4320}
+      Script: {instanceID: 4330}
     - Class: 114
-      Script: {instanceID: 4738}
+      Script: {instanceID: 4748}
     - Class: 114
-      Script: {instanceID: 4768}
+      Script: {instanceID: 4780}
     - Class: 114
-      Script: {instanceID: 5012}
+      Script: {instanceID: 5024}
     - Class: 114
-      Script: {instanceID: 5554}
+      Script: {instanceID: 5570}
     - Class: 114
-      Script: {instanceID: 5704}
+      Script: {instanceID: 5722}
     - Class: 114
-      Script: {instanceID: 5776}
+      Script: {instanceID: 5796}
     - Class: 114
-      Script: {instanceID: 6020}
+      Script: {instanceID: 6044}
     - Class: 114
-      Script: {instanceID: 6928}
+      Script: {instanceID: 6958}
     - Class: 114
-      Script: {instanceID: 23668}
+      Script: {instanceID: 23758}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128

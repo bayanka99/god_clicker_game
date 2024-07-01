@@ -75,7 +75,7 @@ public class Powerup : MonoBehaviour
             float zOffset = (i / 3 - 1) * spacing; // Adjust 3 to change formation depth
 
             Vector3 enemyPosition = spawnPosition + new Vector3(xOffset, 0f, zOffset);
-            GameObject newBox= Instantiate(gameManager.targets[4], enemyPosition, Quaternion.identity);
+            GameObject newBox= Instantiate(gameManager.targets[2], enemyPosition, Quaternion.identity);
             Rigidbody rb = newBox.GetComponent<Rigidbody>();
             if (rb != null)
             {
@@ -112,7 +112,7 @@ public class Powerup : MonoBehaviour
 
             Vector3 enemyPosition = spawnPosition + new Vector3(xOffset, 0f, zOffset);
 
-            int enemyIndex = Random.Range(0, 4); // Randomly select an enemy prefab
+            int enemyIndex = Random.Range(0, 2); 
             Instantiate(gameManager.targets[enemyIndex], enemyPosition, Quaternion.identity);
         }
 

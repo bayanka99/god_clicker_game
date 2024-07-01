@@ -13,11 +13,13 @@ public class Enemy : MonoBehaviour
     public float points;
     public ParticleSystem explosion;
     public AudioClip click_sounds;
+    private Animator animator;
 
 
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
         player = GameObject.Find("Player");
         gameManager= GameObject.Find("GameManager").GetComponent<GameManager>();
 
@@ -35,6 +37,8 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+     
+        animator.SetFloat("speed", 1); 
         //rb.AddForce((player.transform.position - transform.position).normalized * speed);
         rb.velocity = (player.transform.position - transform.position).normalized * speed;
  
