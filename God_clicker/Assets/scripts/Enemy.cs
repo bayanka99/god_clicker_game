@@ -57,25 +57,29 @@ public class Enemy : MonoBehaviour
 
     public void OnMouseDown()
     {
-        int index = UnityEngine.Random.Range(0, 3);
-
-        // Instantiate(targets[index],spawnPosition, Quaternion.identity);
-        GameObject blood_stains = Instantiate(blood[index], transform.position, Quaternion.identity);
-        gameManager.destroy_blood(blood_stains);
-       
-
-        if (gameManager.game_is_active)
+        if (!gameManager.game_is_paused)
         {
- 
-            Destroy(gameObject);
-            gameManager.Update_score(this.points);
 
-            ParticleSystem explosionParticles = Instantiate(explosion, transform.position, explosion.transform.rotation);
-           
-            // Destroy the explosion GameObject after the duration of the particle system
-            if (explosionParticles != null)
+            int index = UnityEngine.Random.Range(0, 3);
+
+            // Instantiate(targets[index],spawnPosition, Quaternion.identity);
+            GameObject blood_stains = Instantiate(blood[index], transform.position, Quaternion.identity);
+            gameManager.destroy_blood(blood_stains);
+
+
+            if (gameManager.game_is_active)
             {
-                Destroy(explosionParticles, explosionParticles.main.duration);
+
+                Destroy(gameObject);
+                gameManager.Update_score(this.points);
+
+                ParticleSystem explosionParticles = Instantiate(explosion, transform.position, explosion.transform.rotation);
+
+                // Destroy the explosion GameObject after the duration of the particle system
+                if (explosionParticles != null)
+                {
+                    Destroy(explosionParticles, explosionParticles.main.duration);
+                }
             }
         }
 
