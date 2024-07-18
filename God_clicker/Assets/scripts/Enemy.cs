@@ -38,9 +38,12 @@ public class Enemy : MonoBehaviour
     void Update()
     {
      
-        animator.SetFloat("speed", 1); 
-        //rb.AddForce((player.transform.position - transform.position).normalized * speed);
-        rb.velocity = (player.transform.position - transform.position).normalized * speed;
+        animator.SetFloat("speed", 1);
+        if (player != null)
+        {
+            //rb.AddForce((player.transform.position - transform.position).normalized * speed);
+            rb.velocity = (player.transform.position - transform.position).normalized * speed;
+        }
  
     }
 

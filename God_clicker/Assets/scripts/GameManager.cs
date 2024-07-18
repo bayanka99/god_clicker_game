@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -10,8 +11,10 @@ public class GameManager : MonoBehaviour
 {
     public List<GameObject> targets;
     private float score;
+    private int fist_time;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI Game_over_Text;
+    public TextMeshProUGUI tutorial_text;
     public TextMeshProUGUI lives_text;
     public TextMeshProUGUI lives_inc_powerup_text;
     public TextMeshProUGUI lives_dec_powerup_text;
@@ -21,16 +24,20 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI powerups_spawned_text;
     public GameObject main_menu;
     public GameObject how_to_play_screen;
+    public GameObject indicator;
     public GameObject player;
     public int difficulty;
     public Button restart_button;
     public float spawnrate = 1.0f;
     public bool game_is_active;
+
     private float lives;
     private AudioSource ac;
     void Start()
     {
-        
+        PlayerPrefs.SetInt("first_time", 0);
+        PlayerPrefs.Save();
+        this.fist_time = PlayerPrefs.GetInt("first_time", 0);
     }
 
     public void show_how_to_play_screen()
@@ -41,8 +48,9 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void startgame(int difficulty )
+    public void startgame(int difficulty)
     {
+   
         this.difficulty=difficulty;
         game_is_active = true;
         player.gameObject.SetActive(true);
@@ -65,14 +73,43 @@ public class GameManager : MonoBehaviour
         spawnrate /= (float)difficulty;
         StartCoroutine(spawn_shit());
         ac = GetComponent<AudioSource>();
+        if (this.fist_time==0)
+        {
+            StartCoroutine(SpawnAndPause());
 
-        /*
-        ac = GetComponent<AudioSource>();
 
-        
+        }
 
-      
-        */
+
+    }
+
+    private IEnumerator SpawnAndPause()
+    {
+        PlayerPrefs.SetInt("first_time", 1);
+        PlayerPrefs.Save();
+        yield return new WaitForSeconds(1f);
+
+        Vector3 spawnPosition = new Vector3(-11, 0, 10);
+        // Instantiate(targets[index],spawnPosition, Quaternion.identity);
+        GameObject newTarget = Instantiate(targets[0], spawnPosition, Quaternion.identity);
+        GameObject indicator2 = Instantiate(this.indicator, newTarget.transform.position - new Vector3(0, 0, 0), Quaternion.identity);
+        indicator2.SetActive(true);
+        newTarget.transform.LookAt(player.transform);
+        tutorial_text.gameObject.SetActive(true);
+        // Pause the game
+        Time.timeScale = 0;
+
+        // Wait for player interaction
+        while (newTarget!=null)
+        {
+            yield return null; // Wait until the player clicks
+        }
+        indicator2.SetActive(false);
+        tutorial_text.gameObject.SetActive(false);
+
+        // Resume the game
+        Time.timeScale = 1;
+
     }
 
     // Update is called once per frame
