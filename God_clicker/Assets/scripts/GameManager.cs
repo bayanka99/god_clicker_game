@@ -22,15 +22,18 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI lives_inc_powerup_text;
     public TextMeshProUGUI lives_dec_powerup_text;
     public TextMeshProUGUI score_inc_powerup_text;
+    public GameObject pause_game_screen;
     public TextMeshProUGUI all_enemies_killed_text;
     public TextMeshProUGUI enemies_spawned_text;
     public TextMeshProUGUI powerups_spawned_text;
     public GameObject main_menu;
+    public GameObject credits_screen;
     public GameObject how_to_play_screen;
     public GameObject indicator;
     public GameObject ground;
     public GameObject player;
     public int difficulty;
+    public bool game_is_paused = false;
     public Button restart_button;
     public float spawnrate = 1.0f;
     public bool game_is_active;
@@ -54,11 +57,21 @@ public class GameManager : MonoBehaviour
 
     }
 
+
+    public void show_credits_screen()
+    {
+        main_menu.gameObject.SetActive(false);
+        credits_screen.gameObject.SetActive(true);
+
+
+    }
+
     public void startgame(int difficulty)
     {
        
         this.difficulty=difficulty;
         game_is_active = true;
+        game_is_paused = false;
         player.gameObject.SetActive(true);
         
 
@@ -124,7 +137,28 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         
+        if (Input.GetKeyDown(KeyCode.Space))
+       {
+            if(this.game_is_paused)
+            {
+                Time.timeScale = 1;
+                this.game_is_paused = false;
+                pause_game_screen.gameObject.SetActive(false);
+            }
+            else
+            {
+
+                Time.timeScale = 0;
+                this.game_is_paused = true;
+                pause_game_screen.gameObject.SetActive(true);
+            }
+
+            
+            
+        }
+
     }
 
 
@@ -214,8 +248,7 @@ public class GameManager : MonoBehaviour
     public void gameover()
     {
         
-            Game_over_Text.gameObject.SetActive(true);
-        
+         Game_over_Text.gameObject.SetActive(true);
          restart_button.gameObject.SetActive(true);
         game_is_active = false;
 

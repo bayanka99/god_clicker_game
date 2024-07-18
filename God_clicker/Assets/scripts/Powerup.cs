@@ -28,7 +28,7 @@ public class Powerup : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (gameManager.game_is_active)
+        if (gameManager.game_is_active && !gameManager.game_is_paused)
         {
             if (this.hitpoints>0)
                 {
