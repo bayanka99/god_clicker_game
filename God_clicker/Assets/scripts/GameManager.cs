@@ -10,6 +10,10 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public List<GameObject> targets;
+    public List<AudioClip> zombie_sounds;
+    public List<AudioClip> zombie_dead_sounds;
+    
+
     private float score;
     private int fist_time;
     public TextMeshProUGUI scoreText;
@@ -125,9 +129,12 @@ public class GameManager : MonoBehaviour
             
             yield return new WaitForSeconds(spawnrate);
             int index = Random.Range(0, 2);
+            int sound_index = Random.Range(0, 3);
+            
             Vector3 spawnPosition = generate_position();
             // Instantiate(targets[index],spawnPosition, Quaternion.identity);
             GameObject newTarget = Instantiate(targets[index], spawnPosition, Quaternion.identity);
+            ac.PlayOneShot(zombie_sounds[sound_index], 1.0f);
             newTarget.transform.LookAt(player.transform);
             double probability = 0.09; 
             if (Random.value < probability)
@@ -158,17 +165,20 @@ public class GameManager : MonoBehaviour
         StartCoroutine(HideTextAfterDelay(3.0f, score_inc_powerup_text));
     }
 
-    public void Update_score(float points, AudioClip click_sounds)
+    public void Update_score(float points)
     {
-        ac.PlayOneShot(click_sounds, 1.0f);
+        int sound_index = Random.Range(0, 3);
+        ac.PlayOneShot(zombie_dead_sounds[sound_index], 1.0f);
+        
         score = score + points;
         scoreText.text = "Score: " + score;
     }
 
-    public void edit_life(float number, Collider other)
+    public void edit_life(float number, Collider other, AudioClip bite_sound)
     {
         lives = lives + number;
         lives_text.text = "Lives: " + lives;
+        ac.PlayOneShot(bite_sound, 1.0f);
         if (lives <= 0)
         {
             Destroy(other.gameObject);

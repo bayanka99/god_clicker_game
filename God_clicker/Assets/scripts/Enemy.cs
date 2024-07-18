@@ -8,12 +8,17 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     public float speed;
     private Rigidbody rb;
+
     private GameObject player;
     private GameManager gameManager;
     public float points;
     public ParticleSystem explosion;
-    public AudioClip click_sounds;
+    public AudioClip bite_sound;
+    
+
+
     private Animator animator;
+
 
 
     void Start()
@@ -32,6 +37,7 @@ public class Enemy : MonoBehaviour
             case 3:
                 speed = speed*4; break;
         }
+     
     }
 
     // Update is called once per frame
@@ -52,9 +58,17 @@ public class Enemy : MonoBehaviour
     {
         if (gameManager.game_is_active)
         {
+ 
             Destroy(gameObject);
-            gameManager.Update_score(this.points, this.click_sounds);
-            Instantiate(explosion, transform.position, explosion.transform.rotation);
+            gameManager.Update_score(this.points);
+
+            ParticleSystem explosionParticles = Instantiate(explosion, transform.position, explosion.transform.rotation);
+           
+            // Destroy the explosion GameObject after the duration of the particle system
+            if (explosionParticles != null)
+            {
+                Destroy(explosionParticles, explosionParticles.main.duration);
+            }
         }
 
 
@@ -69,7 +83,8 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
             if (gameManager.game_is_active)
             {
-                gameManager.edit_life(-1,other);
+                gameManager.edit_life(-1,other, this.bite_sound);
+
             }
         }
       //  if (!gameObject.CompareTag("Bad"))

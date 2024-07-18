@@ -4071,8 +4071,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   points: 2
-  explosion: {fileID: 15085447402717889, guid: 743ce290c74ae49c19aa3f128322fc7e, type: 3}
-  click_sounds: {fileID: 8300000, guid: 913d6445ee8cc4152a9c18da590ee203, type: 3}
+  explosion: {fileID: 198090597041805642, guid: d5f26854a8904624c8073139cd2eb346, type: 3}
+  bite_sound: {fileID: 8300000, guid: 6bd85993732af42e0bfb4c67f87ae69b, type: 3}
 --- !u!54 &-4864702756403126271
 Rigidbody:
   m_ObjectHideFlags: 0

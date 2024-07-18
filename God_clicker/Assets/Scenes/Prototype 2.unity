@@ -3126,7 +3126,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100046, guid: 7b6675de545141649953fd8adec4561b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100046, guid: 7b6675de545141649953fd8adec4561b, type: 3}
       propertyPath: m_TagString
@@ -3900,6 +3900,14 @@ MonoBehaviour:
   - {fileID: 7801836393029605840, guid: 159608d9a26e9064e99304d87658cb3a, type: 3}
   - {fileID: 4151274429597962568, guid: fcd238fa79a680747a214fb7f35be7dc, type: 3}
   - {fileID: 5590085474156337198, guid: 4bfcdf17c5abfe545a2c9eeab5423b3b, type: 3}
+  zombie_sounds:
+  - {fileID: 8300000, guid: 2628db55e50fe41cc9879051d359847a, type: 3}
+  - {fileID: 8300000, guid: 94e452828af664292a97c95ec9452126, type: 3}
+  - {fileID: 8300000, guid: 2c706f39dc7b645e0a17766d7757d4c5, type: 3}
+  zombie_dead_sounds:
+  - {fileID: 8300000, guid: f390d65ed5b9f4cb48199feda830b4c5, type: 3}
+  - {fileID: 8300000, guid: d51f58d09307143948342cae5c3b505a, type: 3}
+  - {fileID: 8300000, guid: c72fed312939e4b408be24e3ebf6bf42, type: 3}
   scoreText: {fileID: 1476137232}
   Game_over_Text: {fileID: 337580667}
   tutorial_text: {fileID: 826399428}
@@ -3943,7 +3951,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 606910ec401804eb09925f0d57909c04, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4d3004ec8f8c42f4a8aa22e1081f772d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
