@@ -29,11 +29,15 @@ public class GameManager : MonoBehaviour
     public GameObject main_menu;
     public GameObject how_to_play_screen;
     public GameObject indicator;
+    public GameObject ground;
     public GameObject player;
     public int difficulty;
     public Button restart_button;
     public float spawnrate = 1.0f;
     public bool game_is_active;
+    public Material easy_material;
+    public Material med_material;
+    public Material hard_material;
 
     private float lives;
     private AudioSource ac;
@@ -58,16 +62,20 @@ public class GameManager : MonoBehaviour
         this.difficulty=difficulty;
         game_is_active = true;
         player.gameObject.SetActive(true);
+        
 
         score = 0;
         switch (difficulty)
         {
             case 1:
+                this.ground.GetComponent<Renderer>().material = easy_material;
                 lives = 5; break;
              case 2:
-                lives=3; break;
+                this.ground.GetComponent<Renderer>().material = med_material;
+                lives =3; break;
             case 3:
-                lives=1; break;
+                this.ground.GetComponent<Renderer>().material = hard_material;
+                lives =1; break;
         }
         scoreText.text = "Score: " + score;
         lives_text.text = "Lives: " + lives;
@@ -75,14 +83,15 @@ public class GameManager : MonoBehaviour
         lives_text.gameObject.SetActive(true);
         scoreText.gameObject.SetActive(true);
         spawnrate /= (float)difficulty;
-        StartCoroutine(spawn_shit());
-        ac = GetComponent<AudioSource>();
-        if (this.fist_time==0)
+        if (this.fist_time == 0)
         {
             StartCoroutine(SpawnAndPause());
 
 
         }
+        StartCoroutine(spawn_shit());
+        ac = GetComponent<AudioSource>();
+     
 
 
     }
@@ -136,7 +145,8 @@ public class GameManager : MonoBehaviour
             GameObject newTarget = Instantiate(targets[index], spawnPosition, Quaternion.identity);
             ac.PlayOneShot(zombie_sounds[sound_index], 1.0f);
             newTarget.transform.LookAt(player.transform);
-            double probability = 0.09; 
+            //double probability = 0.09; 
+            double probability = 1;
             if (Random.value < probability)
             {
                     Instantiate(targets[2], new Vector3(Random.Range(-20, 20), 0, Random.Range(-10, 10)), Quaternion.identity);

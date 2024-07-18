@@ -76,9 +76,9 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        
 
-       
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             Destroy(gameObject);
             if (gameManager.game_is_active)
@@ -87,10 +87,18 @@ public class Enemy : MonoBehaviour
 
             }
         }
-      //  if (!gameObject.CompareTag("Bad"))
-      //  {
-       //     manager.gameover();
-      //  }
+
+        if (other.CompareTag("Power_up"))
+        {
+            Destroy(other.gameObject);
+            Destroy(gameObject);
+            
+        }
+
+        //  if (!gameObject.CompareTag("Bad"))
+        //  {
+        //     manager.gameover();
+        //  }
     }
 
 }
