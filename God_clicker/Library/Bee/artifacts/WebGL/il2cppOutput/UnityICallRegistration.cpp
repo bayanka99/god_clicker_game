@@ -1980,22 +1980,6 @@ void RegisterAllStrippedInternalCalls()
 
 	//End Registrations for type : UnityEngine.PlayerConnectionInternal
 
-	//Start Registrations for type : UnityEngine.PlayerPrefs
-
-		//System.Boolean UnityEngine.PlayerPrefs::TrySetInt(System.String,System.Int32)
-		void Register_UnityEngine_PlayerPrefs_TrySetInt();
-		Register_UnityEngine_PlayerPrefs_TrySetInt();
-
-		//System.Int32 UnityEngine.PlayerPrefs::GetInt(System.String,System.Int32)
-		void Register_UnityEngine_PlayerPrefs_GetInt();
-		Register_UnityEngine_PlayerPrefs_GetInt();
-
-		//System.Void UnityEngine.PlayerPrefs::Save()
-		void Register_UnityEngine_PlayerPrefs_Save();
-		Register_UnityEngine_PlayerPrefs_Save();
-
-	//End Registrations for type : UnityEngine.PlayerPrefs
-
 	//Start Registrations for type : UnityEngine.PropertyNameUtils
 
 		//System.Void UnityEngine.PropertyNameUtils::PropertyNameFromString_Injected(System.String,UnityEngine.PropertyName&)

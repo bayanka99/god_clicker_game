@@ -15,7 +15,6 @@ public class GameManager : MonoBehaviour
     
 
     private float score;
-    private int fist_time;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI Game_over_Text;
     public TextMeshProUGUI tutorial_text;
@@ -44,7 +43,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
 
-        this.fist_time = PlayerPrefs.GetInt("first_time", 0);
+        
     }
 
     public void show_how_to_play_screen()
@@ -57,7 +56,7 @@ public class GameManager : MonoBehaviour
 
     public void startgame(int difficulty)
     {
-   
+       
         this.difficulty=difficulty;
         game_is_active = true;
         player.gameObject.SetActive(true);
@@ -82,12 +81,11 @@ public class GameManager : MonoBehaviour
         lives_text.gameObject.SetActive(true);
         scoreText.gameObject.SetActive(true);
         spawnrate /= (float)difficulty;
-        if (this.fist_time == 0)
-        {
-            StartCoroutine(SpawnAndPause());
+ 
+        StartCoroutine(SpawnAndPause());
 
 
-        }
+        
         StartCoroutine(spawn_shit());
         ac = GetComponent<AudioSource>();
      
@@ -97,8 +95,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator SpawnAndPause()
     {
-        PlayerPrefs.SetInt("first_time", 1);
-        PlayerPrefs.Save();
+  
         yield return new WaitForSeconds(1f);
 
         Vector3 spawnPosition = new Vector3(-11, 0, 10);
