@@ -43,8 +43,7 @@ public class GameManager : MonoBehaviour
     private AudioSource ac;
     void Start()
     {
-        PlayerPrefs.SetInt("first_time", 0);
-        PlayerPrefs.Save();
+
         this.fist_time = PlayerPrefs.GetInt("first_time", 0);
     }
 
