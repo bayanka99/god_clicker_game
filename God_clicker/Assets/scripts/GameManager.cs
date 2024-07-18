@@ -3,15 +3,21 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public List<GameObject> targets;
+    public List<AudioClip> zombie_sounds;
+    public List<AudioClip> zombie_dead_sounds;
+    
+
     private float score;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI Game_over_Text;
+    public TextMeshProUGUI tutorial_text;
     public TextMeshProUGUI lives_text;
     public TextMeshProUGUI lives_inc_powerup_text;
     public TextMeshProUGUI lives_dec_powerup_text;
@@ -21,15 +27,22 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI powerups_spawned_text;
     public GameObject main_menu;
     public GameObject how_to_play_screen;
+    public GameObject indicator;
+    public GameObject ground;
     public GameObject player;
     public int difficulty;
     public Button restart_button;
     public float spawnrate = 1.0f;
     public bool game_is_active;
+    public Material easy_material;
+    public Material med_material;
+    public Material hard_material;
+
     private float lives;
     private AudioSource ac;
     void Start()
     {
+
         
     }
 
@@ -41,21 +54,26 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void startgame(int difficulty )
+    public void startgame(int difficulty)
     {
+       
         this.difficulty=difficulty;
         game_is_active = true;
         player.gameObject.SetActive(true);
+        
 
         score = 0;
         switch (difficulty)
         {
             case 1:
-                lives = 5; break;
+                this.ground.GetComponent<Renderer>().material = easy_material;
+                lives = 10; break;
              case 2:
-                lives=3; break;
+                this.ground.GetComponent<Renderer>().material = med_material;
+                lives =5; break;
             case 3:
-                lives=1; break;
+                this.ground.GetComponent<Renderer>().material = hard_material;
+                lives =3; break;
         }
         scoreText.text = "Score: " + score;
         lives_text.text = "Lives: " + lives;
@@ -63,16 +81,44 @@ public class GameManager : MonoBehaviour
         lives_text.gameObject.SetActive(true);
         scoreText.gameObject.SetActive(true);
         spawnrate /= (float)difficulty;
-        StartCoroutine(spawn_shit());
-        ac = GetComponent<AudioSource>();
+ 
+        StartCoroutine(SpawnAndPause());
 
-        /*
-        ac = GetComponent<AudioSource>();
 
         
+        StartCoroutine(spawn_shit());
+        ac = GetComponent<AudioSource>();
+     
 
-      
-        */
+
+    }
+
+    private IEnumerator SpawnAndPause()
+    {
+  
+        yield return new WaitForSeconds(1f);
+
+        Vector3 spawnPosition = new Vector3(-11, 0, 10);
+        // Instantiate(targets[index],spawnPosition, Quaternion.identity);
+        GameObject newTarget = Instantiate(targets[0], spawnPosition, Quaternion.identity);
+        GameObject indicator2 = Instantiate(this.indicator, newTarget.transform.position - new Vector3(0, 0, 0), Quaternion.identity);
+        indicator2.SetActive(true);
+        newTarget.transform.LookAt(player.transform);
+        tutorial_text.gameObject.SetActive(true);
+        // Pause the game
+        Time.timeScale = 0;
+
+        // Wait for player interaction
+        while (newTarget!=null)
+        {
+            yield return null; // Wait until the player clicks
+        }
+        indicator2.SetActive(false);
+        tutorial_text.gameObject.SetActive(false);
+
+        // Resume the game
+        Time.timeScale = 1;
+
     }
 
     // Update is called once per frame
@@ -81,18 +127,41 @@ public class GameManager : MonoBehaviour
         
     }
 
-     IEnumerator spawn_shit()
+
+
+    public void destroy_blood(GameObject blood_stains)
+    {
+        StartCoroutine(DestroyBloodStainsAfterDelay(blood_stains));
+    }
+
+    private IEnumerator DestroyBloodStainsAfterDelay(GameObject bloodStains)
+    {
+        yield return new WaitForSeconds(10);
+
+        // Check if blood stains GameObject is valid before destroying
+        if (bloodStains != null)
+        {
+            Destroy(bloodStains);
+        }
+    }
+
+    IEnumerator spawn_shit()
     {
         while (game_is_active)
         {
             
             yield return new WaitForSeconds(spawnrate);
             int index = Random.Range(0, 2);
+            int sound_index = Random.Range(0, 3);
+            
             Vector3 spawnPosition = generate_position();
             // Instantiate(targets[index],spawnPosition, Quaternion.identity);
             GameObject newTarget = Instantiate(targets[index], spawnPosition, Quaternion.identity);
+            ac.PlayOneShot(zombie_sounds[sound_index], 1.0f);
             newTarget.transform.LookAt(player.transform);
             double probability = 0.09; 
+            //double probability = 1;
+
             if (Random.value < probability)
             {
                     Instantiate(targets[2], new Vector3(Random.Range(-20, 20), 0, Random.Range(-10, 10)), Quaternion.identity);
@@ -121,17 +190,20 @@ public class GameManager : MonoBehaviour
         StartCoroutine(HideTextAfterDelay(3.0f, score_inc_powerup_text));
     }
 
-    public void Update_score(float points, AudioClip click_sounds)
+    public void Update_score(float points)
     {
-        ac.PlayOneShot(click_sounds, 1.0f);
+        int sound_index = Random.Range(0, 3);
+        ac.PlayOneShot(zombie_dead_sounds[sound_index], 1.0f);
+        
         score = score + points;
         scoreText.text = "Score: " + score;
     }
 
-    public void edit_life(float number, Collider other)
+    public void edit_life(float number, Collider other, AudioClip bite_sound)
     {
         lives = lives + number;
         lives_text.text = "Lives: " + lives;
+        ac.PlayOneShot(bite_sound, 1.0f);
         if (lives <= 0)
         {
             Destroy(other.gameObject);

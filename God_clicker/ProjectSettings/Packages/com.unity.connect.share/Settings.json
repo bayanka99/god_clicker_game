@@ -4,7 +4,7 @@
             {
                 "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
                 "key": "buildOutputDirList",
-                "value": "{\"m_Value\":\"C:/Users/bayan/Desktop/god_clicker;;;;;;;;;\"}"
+                "value": "{\"m_Value\":\"C:/Users/bayan/Desktop/god_clicker_web;C:/Users/bayan/Desktop/god_clicker;;;;;;;;\"}"
             },
             {
                 "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",

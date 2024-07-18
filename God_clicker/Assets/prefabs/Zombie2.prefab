@@ -750,7 +750,7 @@ GameObject:
   - component: {fileID: 7739247513568484555}
   m_Layer: 0
   m_Name: Zombie2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -765,7 +765,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10.5942, y: 0, z: -2.3025348}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3471203165716252521}
@@ -854,10 +854,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f18cc3574776714fadc0348899742fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 7
+  blood:
+  - {fileID: 4635720387430646517, guid: daa5fdc4a0609fd408fcd03de21f8123, type: 3}
+  - {fileID: 5968857116452938328, guid: f84d05046e0133941a2383a0011535f2, type: 3}
+  - {fileID: 1416421149715006179, guid: 4644cbad3973a0c4bba6d47afc2795db, type: 3}
   points: 3
-  explosion: {fileID: 2088871590894813759, guid: 745208c9d6e104225bd99e1ab894e3bb, type: 3}
-  click_sounds: {fileID: 8300000, guid: 913d6445ee8cc4152a9c18da590ee203, type: 3}
+  explosion: {fileID: 198090597041805642, guid: d5f26854a8904624c8073139cd2eb346, type: 3}
+  bite_sound: {fileID: 8300000, guid: 9cff8a619ef7941ad9b7c695de6ed45f, type: 3}
 --- !u!1 &4256823186462946620
 GameObject:
   m_ObjectHideFlags: 0

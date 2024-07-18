@@ -3993,7 +3993,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -12.359, y: 0, z: 0.8035951}
-  m_LocalScale: {x: 2.0777106, y: 2.0777106, z: 2.0777106}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8069292591610153588}
@@ -4069,10 +4069,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f18cc3574776714fadc0348899742fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 10
+  blood:
+  - {fileID: 4635720387430646517, guid: daa5fdc4a0609fd408fcd03de21f8123, type: 3}
+  - {fileID: 5968857116452938328, guid: f84d05046e0133941a2383a0011535f2, type: 3}
+  - {fileID: 1416421149715006179, guid: 4644cbad3973a0c4bba6d47afc2795db, type: 3}
   points: 2
-  explosion: {fileID: 15085447402717889, guid: 743ce290c74ae49c19aa3f128322fc7e, type: 3}
-  click_sounds: {fileID: 8300000, guid: 913d6445ee8cc4152a9c18da590ee203, type: 3}
+  explosion: {fileID: 198090597041805642, guid: d5f26854a8904624c8073139cd2eb346, type: 3}
+  bite_sound: {fileID: 8300000, guid: 6bd85993732af42e0bfb4c67f87ae69b, type: 3}
 --- !u!54 &-4864702756403126271
 Rigidbody:
   m_ObjectHideFlags: 0

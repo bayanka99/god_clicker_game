@@ -25,10 +25,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -166,7 +164,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6958}
     - Class: 114
-      Script: {instanceID: 23758}
+      Script: {instanceID: 23776}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -250,7 +248,7 @@ ScriptsOnlyBuild:
     className: UnityOnMouseExitMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 2cf34660c712986903042dc2763de649
+      Hash: 8f96c1eef5475bd119cddfe798ddf775
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Enemy
@@ -970,7 +968,7 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
-      Hash: 538fa1887d53582e0d3b05381a4b0449
+      Hash: d992429f9381f029a53371abb647f6dc
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: GameManager
@@ -1079,4 +1077,4 @@ ScriptsOnlyBuild:
   platform: 20
   scenePathNames:
   - Assets/Scenes/Prototype 2.unity
-  playerPath: C:/Users/bayan/Desktop/god_clicker
+  playerPath: C:/Users/bayan/Desktop/god_clicker_web
