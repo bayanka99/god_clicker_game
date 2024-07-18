@@ -750,7 +750,7 @@ GameObject:
   - component: {fileID: 7739247513568484555}
   m_Layer: 0
   m_Name: Zombie2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -854,7 +854,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f18cc3574776714fadc0348899742fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 7
+  blood:
+  - {fileID: 4635720387430646517, guid: daa5fdc4a0609fd408fcd03de21f8123, type: 3}
+  - {fileID: 5968857116452938328, guid: f84d05046e0133941a2383a0011535f2, type: 3}
+  - {fileID: 1416421149715006179, guid: 4644cbad3973a0c4bba6d47afc2795db, type: 3}
   points: 3
   explosion: {fileID: 198090597041805642, guid: d5f26854a8904624c8073139cd2eb346, type: 3}
   bite_sound: {fileID: 8300000, guid: 9cff8a619ef7941ad9b7c695de6ed45f, type: 3}

@@ -170,6 +170,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  hitpoints: 5
+  hitpoints: 3
   explosion: {fileID: 7303472089845130122, guid: 6cbc21f5e9162483993a2b84b14d5ac8, type: 3}
   click_sounds: {fileID: 8300000, guid: e7ee25a47d63b46cdaf65480d62b405c, type: 3}

@@ -69,13 +69,13 @@ public class GameManager : MonoBehaviour
         {
             case 1:
                 this.ground.GetComponent<Renderer>().material = easy_material;
-                lives = 5; break;
+                lives = 10; break;
              case 2:
                 this.ground.GetComponent<Renderer>().material = med_material;
-                lives =3; break;
+                lives =5; break;
             case 3:
                 this.ground.GetComponent<Renderer>().material = hard_material;
-                lives =1; break;
+                lives =3; break;
         }
         scoreText.text = "Score: " + score;
         lives_text.text = "Lives: " + lives;
@@ -131,7 +131,25 @@ public class GameManager : MonoBehaviour
         
     }
 
-     IEnumerator spawn_shit()
+
+
+    public void destroy_blood(GameObject blood_stains)
+    {
+        StartCoroutine(DestroyBloodStainsAfterDelay(blood_stains));
+    }
+
+    private IEnumerator DestroyBloodStainsAfterDelay(GameObject bloodStains)
+    {
+        yield return new WaitForSeconds(10);
+
+        // Check if blood stains GameObject is valid before destroying
+        if (bloodStains != null)
+        {
+            Destroy(bloodStains);
+        }
+    }
+
+    IEnumerator spawn_shit()
     {
         while (game_is_active)
         {
@@ -145,8 +163,9 @@ public class GameManager : MonoBehaviour
             GameObject newTarget = Instantiate(targets[index], spawnPosition, Quaternion.identity);
             ac.PlayOneShot(zombie_sounds[sound_index], 1.0f);
             newTarget.transform.LookAt(player.transform);
-            //double probability = 0.09; 
-            double probability = 1;
+            double probability = 0.09; 
+            //double probability = 1;
+
             if (Random.value < probability)
             {
                     Instantiate(targets[2], new Vector3(Random.Range(-20, 20), 0, Random.Range(-10, 10)), Quaternion.identity);
