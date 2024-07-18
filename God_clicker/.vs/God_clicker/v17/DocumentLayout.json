@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\bayan\\Desktop\\game\\God_clicker\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0450A9BB-0260-5F32-03E9-D841CB24810A}|Assembly-CSharp.csproj|C:\\Users\\bayan\\Desktop\\game\\God_clicker\\assets\\scripts\\powerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0450A9BB-0260-5F32-03E9-D841CB24810A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\powerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0450A9BB-0260-5F32-03E9-D841CB24810A}|Assembly-CSharp.csproj|c:\\users\\bayan\\desktop\\game\\god_clicker\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0450A9BB-0260-5F32-03E9-D841CB24810A}|Assembly-CSharp.csproj|C:\\Users\\bayan\\Desktop\\game\\God_clicker\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0450A9BB-0260-5F32-03E9-D841CB24810A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0450A9BB-0260-5F32-03E9-D841CB24810A}|Assembly-CSharp.csproj|C:\\Users\\bayan\\Desktop\\game\\God_clicker\\assets\\scripts\\difficultybutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0450A9BB-0260-5F32-03E9-D841CB24810A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\difficultybutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0450A9BB-0260-5F32-03E9-D841CB24810A}|Assembly-CSharp.csproj|C:\\Users\\bayan\\Desktop\\game\\God_clicker\\assets\\scripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0450A9BB-0260-5F32-03E9-D841CB24810A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0450A9BB-0260-5F32-03E9-D841CB24810A}|Assembly-CSharp.csproj|c:\\users\\bayan\\desktop\\game\\god_clicker\\assets\\scripts\\powerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0450A9BB-0260-5F32-03E9-D841CB24810A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\powerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0450A9BB-0260-5F32-03E9-D841CB24810A}|Assembly-CSharp.csproj|C:\\Users\\bayan\\Desktop\\game\\God_clicker\\assets\\scripts\\difficultybutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0450A9BB-0260-5F32-03E9-D841CB24810A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\difficultybutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0450A9BB-0260-5F32-03E9-D841CB24810A}|Assembly-CSharp.csproj|C:\\Users\\bayan\\Desktop\\game\\God_clicker\\assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -46,37 +46,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Enemy.cs",
               "DocumentMoniker": "C:\\Users\\bayan\\Desktop\\game\\God_clicker\\Assets\\scripts\\Enemy.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Enemy.cs",
               "ToolTip": "C:\\Users\\bayan\\Desktop\\game\\God_clicker\\Assets\\scripts\\Enemy.cs",
               "RelativeToolTip": "Assets\\scripts\\Enemy.cs",
-              "ViewState": "AQIAADcAAAAAAAAAAAAAAD0AAAAAAAAA",
+              "ViewState": "AQIAACgAAAAAAAAAAAAAAD0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-30T06:33:14.127Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\Users\\bayan\\Desktop\\game\\God_clicker\\Assets\\scripts\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\GameManager.cs",
               "ToolTip": "C:\\Users\\bayan\\Desktop\\game\\God_clicker\\Assets\\scripts\\GameManager.cs",
               "RelativeToolTip": "Assets\\scripts\\GameManager.cs",
-              "ViewState": "AQIAALAAAAAAAAAAAAAawLoAAAA1AAAA",
+              "ViewState": "AQIAAGkAAAAAAAAAAAAawH0AAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-30T06:32:08.403Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "DifficultyButton.cs",
               "DocumentMoniker": "C:\\Users\\bayan\\Desktop\\game\\God_clicker\\Assets\\scripts\\DifficultyButton.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\DifficultyButton.cs",
@@ -84,8 +84,7 @@
               "RelativeToolTip": "Assets\\scripts\\DifficultyButton.cs",
               "ViewState": "AQIAAAUAAAAAAAAAAAAqwBkAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-30T06:40:46.246Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-30T06:40:46.246Z"
             },
             {
               "$type": "Document",
@@ -97,8 +96,7 @@
               "RelativeToolTip": "Assets\\scripts\\Player_Follower.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-30T06:33:05.808Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-30T06:33:05.808Z"
             },
             {
               "$type": "Document",
@@ -110,8 +108,7 @@
               "RelativeToolTip": "Assets\\scripts\\PlayerController.cs",
               "ViewState": "AQIAAAkAAAAAAAAAAAAAABYAAABeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-30T06:33:02.088Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-30T06:33:02.088Z"
             },
             {
               "$type": "Document",
@@ -127,7 +124,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Powerup.cs",
               "DocumentMoniker": "C:\\Users\\bayan\\Desktop\\game\\God_clicker\\Assets\\scripts\\Powerup.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Powerup.cs",

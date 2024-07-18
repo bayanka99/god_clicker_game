@@ -80,6 +80,15 @@ ScriptsOnlyBuild:
     methodName: restart_game
   - assembly: Assembly-CSharp
     fullTypeName: GameManager
+    methodName: show_credits_screen
+  - assembly: Assembly-CSharp
+    fullTypeName: GameManager
+    methodName: restart_game
+  - assembly: Assembly-CSharp
+    fullTypeName: GameManager
+    methodName: restart_game
+  - assembly: Assembly-CSharp
+    fullTypeName: GameManager
     methodName: restart_game
   sceneClasses:
     Assets/Scenes/Prototype 2.unity:
@@ -164,7 +173,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6958}
     - Class: 114
-      Script: {instanceID: 23776}
+      Script: {instanceID: 23866}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -968,7 +977,7 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
-      Hash: d992429f9381f029a53371abb647f6dc
+      Hash: 1f84f1bf9dea568731edad310fc52470
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: GameManager

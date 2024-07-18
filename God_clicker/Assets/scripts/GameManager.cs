@@ -111,6 +111,10 @@ public class GameManager : MonoBehaviour
   
         yield return new WaitForSeconds(1f);
 
+         int sound_index = Random.Range(0, 3);
+            
+
+            
         Vector3 spawnPosition = new Vector3(-11, 0, 10);
         // Instantiate(targets[index],spawnPosition, Quaternion.identity);
         GameObject newTarget = Instantiate(targets[0], spawnPosition, Quaternion.identity);
@@ -118,6 +122,7 @@ public class GameManager : MonoBehaviour
         indicator2.SetActive(true);
         newTarget.transform.LookAt(player.transform);
         tutorial_text.gameObject.SetActive(true);
+        ac.PlayOneShot(zombie_sounds[sound_index], 1.0f);
         // Pause the game
         Time.timeScale = 0;
 
@@ -256,6 +261,10 @@ public class GameManager : MonoBehaviour
 
     public void restart_game()
     {
+        if(Time.timeScale ==0)
+        {
+            Time.timeScale = 1;
+        }
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
